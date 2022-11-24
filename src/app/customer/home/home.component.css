@@ -1,0 +1,30 @@
+
+::-webkit-scrollbar {
+  height: 0.2em !important;
+  width: 0.4em;
+    background-color: lightgrey
+  }
+
+::-webkit-scrollbar-thumb {
+   
+    background-color: grey; 
+  }
+
+  
+
+[pDraggable] {
+  cursor: move;
+}
+
+
+.highlight {
+  border: 2px solid grey;
+  border-radius: 5px;
+  color:black;
+  padding: 3px;
+  
+  margin: 0 auto;
+}
+
+
+

@@ -1,0 +1,139 @@
+<br />
+
+<!-- <p-panel [transitionOptions]="'0ms'" header="Calendar" [toggleable]="true"> -->
+
+<div style="text-align:right; padding-bottom: 0.5em">
+
+   
+
+    <button pButton pRipple type="button" style="height:1em" (click) = "calClick()" icon="pi pi-calendar-plus"
+        class="p-button-rounded p-button-text"></button>
+
+        <button pButton pRipple type="button" style="height:1em" (click) = "todayClick()" 
+    class="p-button-rounded p-button-text"> Today </button>
+
+        <button pButton pRipple type="button" style="height:1em" (click) = "todayClick()" 
+    class="p-button-rounded p-button-text"> Reset </button>
+
+  
+    <button pButton pRipple type="button" style="height:1em" (click) = "todayClick()" 
+    class="p-button-rounded p-button-text"> Submit </button>
+       
+
+</div>
+
+<div style='display: flex;width: 100%; height: 100%; overflow: auto; white-space: nowrap;padding:0; '>
+    <ng-container *ngFor="let item of myPosts; index as i">
+
+        <div [id]="'demo'+i" pDroppable="products" (onDrop)="drop(i)" (click)="selectDay(i,false)"
+            style="padding-left:0.5em;padding-right:0.5em;  text-align:center; background-color: #f8f9fa;">
+
+
+
+            <span style="font-size:smaller; color: grey"> <b> {{item.date | date:'MMM'}}
+                    {{item.date | date:'dd'}}
+
+                    {{ item.date | date :'yyyy'}}</b> <br />
+
+                {{item.date | date:'EEEE'}} <br />
+
+
+                <img #img aria-haspopup="true" alt="Card" [src]="item.image" style="max-height: 5em">
+
+
+
+
+            </span>
+
+        </div>
+
+
+    </ng-container>
+
+</div>
+<!-- </p-panel> -->
+<div>&nbsp;</div>
+<div style="overflow-y:auto; height:28.1em">
+    <ng-container *ngFor="let items1 of [1,1,1,1,1]; index as i">
+        <!-- <p-accordion>
+        <p-accordionTab header='Demo' [selected]="true"> -->
+        <p-panel [transitionOptions]="'0ms'" [header]="str[i]" [toggleable]="true">
+            <ng-template pTemplate="icons">
+                <span class="p-input-icon-right">
+                    <i class="pi pi-search"></i>
+                    <input type="text" class="p-inputtext-sm" pInputText style='width:8em;height: 2em;'
+                        placeholder="Search">
+                </span>
+
+
+
+                <button pButton class="p-panel-header-icon p-link" (click)="menuCreate(i);menu.toggle($event)">
+                    <span class="pi pi-cog"></span>
+                </button>
+
+            </ng-template>
+
+
+            <div style='display: flex;width: 100%; height: 100%; overflow: auto; white-space: nowrap;padding:0'>
+
+                <ng-container *ngFor="let items of [1,1,1,1,1,1,1,1,1,1]; index as j">
+
+
+
+                    <div style="padding-left:1em;padding-right:1em;" pDraggable="products" (onDragStart)="dragStart(img.src)"
+                        (onDragEnd)="dragEnd()">
+
+
+                        <p-image aria-haspopup="true" [width]="imageWidth" #img [src]="imageStore[i][j]" alt="Image"
+                            [preview]="true"></p-image>
+
+
+                    </div>
+
+
+                </ng-container>
+            </div>
+
+
+
+            <!-- </p-accordionTab>
+    </p-accordion> -->
+
+        </p-panel>
+        <div> &nbsp; </div>
+    </ng-container>
+</div>
+<p-menu #menu id="config_menu" [model]="items" [popup]="true"></p-menu>
+
+
+
+<p-dialog header="Select Date" [(visible)]="visible" [modal]="true" [style]="{width: '100%'}">
+   
+<div style="text-align:center">
+    Selected Image will be displayed here - 
+    <img #img1 aria-haspopup="true" width="100em"  [src]="viewSrc" alt="Image" />
+               </div>
+
+    <p-calendar [(ngModel)]="selectedDate" inputId="template" (ngModelChange)="calChange()" [style]="{width: '100%'}" [inline]="true">
+        <ng-template pTemplate="date" let-date>
+            <span #imgspan  on-mouseenter="viewSrc=img1.src" on-mouseleave="viewSrc='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'">{{date.day}}
+                <img #img1 aria-haspopup="true" width="15em"  [src]="getPostImage(date)" alt="Image" />
+                <p-contextMenu [target]="img1" [model]="[{label: 'View'},{label: 'Edit'}]" ></p-contextMenu>
+
+            </span>
+        </ng-template>
+    </p-calendar>
+               
+
+
+</p-dialog>
+
+
+<!-- <p-dialog header="Header" [(visible)]="viewImage" [modal]="true"
+    [draggable]="false" [resizable]="false">
+    <p class="m-0">
+        <img #img aria-haspopup="true" style="max-width:100%; max-height:100%"  [src]="viewSrc" alt="Image" />
+    </p>
+        
+</p-dialog> -->
+
