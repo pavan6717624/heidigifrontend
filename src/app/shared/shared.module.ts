@@ -24,7 +24,13 @@ import {ContextMenuModule} from 'primeng/contextmenu';
 import {DialogModule} from 'primeng/dialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import {ImageModule} from 'primeng/image';
+import {AvatarModule} from 'primeng/avatar';
+import {AvatarGroupModule} from 'primeng/avatargroup';
+
 const SHARED_MODULES = [
+  
+  AvatarGroupModule,
+  AvatarModule,
   DockModule,
   DynamicDialogModule,
   DialogModule,

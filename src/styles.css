@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    margin-top: 0em;
+    margin:0em;
     font-family: var(--font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    font-family: 'Muli';
 }

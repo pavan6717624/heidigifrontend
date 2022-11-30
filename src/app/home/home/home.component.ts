@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
     this.route.navigate(['/login']);
   }
 
+  loginVisible=false;
+
   items: MenuItem[] = [];
 
     ngOnInit() {
