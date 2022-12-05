@@ -26,9 +26,9 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import {ImageModule} from 'primeng/image';
 import {AvatarModule} from 'primeng/avatar';
 import {AvatarGroupModule} from 'primeng/avatargroup';
-
+import {BlockUIModule} from 'primeng/blockui';
 const SHARED_MODULES = [
-  
+  BlockUIModule,
   AvatarGroupModule,
   AvatarModule,
   DockModule,

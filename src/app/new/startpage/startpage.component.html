@@ -1,0 +1,23 @@
+<img class='imgshadow' style="height: 18em; width: 100%;  padding:0;" [src]="imageSrc[showImage]" />
+
+
+
+
+
+
+
+
+<div class="flex" style="flex-wrap: wrap; text-align:center; justify-content: center;">
+    <div style="padding:1em;" *ngFor="let item of categories; index as i">
+        <img class='imgshadow' (click)='gotoPage()' [src]="'https://picsum.photos/110/110?random='+i*10" alt="Avatar"
+            style="border-radius: 50%;">
+        <br /> <b> {{item}} </b>
+    </div>
+</div>
+
+
+<p-dialog [closeOnEscape] = "false" [closable]= "false" [draggable]="false" header="Login / Sign Up" [(visible)]="loginVisible" [modal]="true" [style]="{'width': '25em'}">
+
+    <app-login></app-login>
+
+</p-dialog>

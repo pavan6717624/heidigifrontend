@@ -1,0 +1,104 @@
+
+::-webkit-scrollbar {
+    height: 0.2em !important;
+    width: 0.4em;
+      background-color: lightgrey
+    }
+  
+  ::-webkit-scrollbar-thumb {
+     
+      background-color: grey; 
+    }
+  
+    
+  
+  [pDraggable] {
+    cursor: move;
+  }
+  
+  
+  .highlight {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    color:black;
+   
+    
+    margin: 0 auto;
+  }
+  
+  
+  .container {
+    position: relative;
+   
+  }
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 2%;
+    left: 7%;
+  
+  }
+
+  
+  /* Top left text */
+  .top-left {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    
+  }
+  
+
+  .top-center {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+  }
+  
+
+  /* Top right text */
+  .top-right {
+    position: absolute;
+    top: 2%;
+    right: 7%;
+  }
+  
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 2%;
+    right: 7%;
+  }
+
+
+  .bottom-center{
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+  }
+  
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+  }
+
+  .centered-left {
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    
+  }
+
+  .centered-right {
+    position: absolute;
+    top: 50%;
+    right: 7%;
+  
+  }
+  
