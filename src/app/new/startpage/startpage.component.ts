@@ -16,7 +16,7 @@ export class StartpageComponent implements OnInit {
 
   categories=['Food','Education','Events','Marketing','Life Style','Finanical']
 
-  loginVisible=false;
+  loginVisible=true;
 
 rotateImages()
 {

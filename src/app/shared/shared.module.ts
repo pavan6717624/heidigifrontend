@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 import {GalleriaModule} from 'primeng/galleria';
 import {CalendarModule} from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
@@ -27,9 +28,13 @@ import {ImageModule} from 'primeng/image';
 import {AvatarModule} from 'primeng/avatar';
 import {AvatarGroupModule} from 'primeng/avatargroup';
 import {BlockUIModule} from 'primeng/blockui';
+import { BadgeModule } from "primeng/badge";
 const SHARED_MODULES = [
   BlockUIModule,
+  BadgeModule,
   AvatarGroupModule,
+  MessageModule,
+  MessagesModule,
   AvatarModule,
   DockModule,
   DynamicDialogModule,

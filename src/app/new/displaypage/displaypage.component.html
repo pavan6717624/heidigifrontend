@@ -1,32 +1,40 @@
 <app-menubar></app-menubar>
-
+<p-badge [value]="counter" class="top-center" size="xlarge" severity="success"></p-badge>
+<p-speedDial [model]="tooltipItems"  showIcon="pi pi-bars" [radius]=100 direction="left" type="semi-circle" [style]="{'bottom':'15%', 'right' : '5%'}"></p-speedDial>
 <!-- <p-panel [transitionOptions]="'0ms'" header="Calendar" [toggleable]="true"> -->
 
-<div style="text-align:right; padding-bottom: 0.5em">
+<!-- <div style="display: flex;width: 100%; height: 100%; overflow: auto;white-space: nowrap;padding:0;">
 
 
 
-    <button pButton pRipple type="button" style="height:1em" (click)="calClick()" icon="pi pi-calendar-plus"
+    <button pButton pRipple type="button" style="height:0.5em" (click)="calClick()" icon="pi pi-calendar-plus"
         class="p-button-rounded p-button-text"></button>
 
-    <button pButton pRipple type="button" style="height:1em" (click)="todayClick()"
+    <button pButton pRipple type="button" style="height:0.5em" (click)="todayClick()"
         class="p-button-rounded p-button-text"> Today </button>
 
-    <button pButton pRipple type="button" style="height:1em" (click)="todayClick()"
+    <button pButton pRipple type="button" style="height:0.5em" (click)="todayClick()"
         class="p-button-rounded p-button-text"> Reset </button>
 
 
-    <button pButton pRipple type="button" style="height:1em" (click)="todayClick()"
+    <button pButton pRipple type="button" style="height:0.5em" (click)="todayClick()"
         class="p-button-rounded p-button-text"> Submit </button>
 
 
-</div>
+    <button pButton pRipple type="button" style="height:0.5em" (click)="todayClick()"
+        class="p-button-rounded p-button-text"> Submit </button>
+
+
+    <button pButton pRipple type="button" style="height:0.5em" (click)="todayClick()"
+        class="p-button-rounded p-button-text"> Submit </button>
+
+</div> -->
 
 <div style='display: flex;width: 100%; height: 100%; overflow: auto; white-space: nowrap;padding:0; '>
     <ng-container *ngFor="let item of myPosts; index as i">
 
         <div [id]="'demo'+i" pDroppable="products" (onDrop)="drop(i)" (click)="selectDay(i,false)"
-            style="padding-left:0.5em;padding-right:0.5em;  text-align:center; background-color: #f8f9fa;">
+            style="padding-left:0.5em;padding-right:0.5em; padding-top:0.3em;  text-align:center; background-color: #f8f9fa;">
 
 
 
@@ -59,28 +67,28 @@
         <p-accordionTab header='Demo' [selected]="true"> -->
 
 
-<div style='display: flex;flex-wrap: wrap;height: 26.3em;overflow-y: auto;'>
+<div style='display: flex;flex-wrap: wrap;overflow-y: auto; ' [style.height.px]="displayHeight">
 
     <ng-container
-        *ngFor="let items of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]; index as j">
+        *ngFor="let image of imageStore index as j">
 
 
 
-        <div style="padding:0.5em;text-align:left" class="highlight" pDraggable="products" (onDragStart)="dragStart(img.src)"
-            (onDragEnd)="dragEnd()">
+        <div style="padding:0.5em;text-align:left" class="highlight" pDraggable="products"
+            (onDragStart)="dragStart(img.src)" (onDragEnd)="dragEnd()">
 
 
-            <p-image aria-haspopup="true" [width]="imageWidth" #img [src]="imageStore[j]" alt="Image" [preview]="true">
+            <p-image class='imgshadow' aria-haspopup="true" [width]="imageWidth" #img [src]="image" alt="Image" [preview]="true">
             </p-image>
 
-            <br/>
+            <br />
 
-           <div style="text-align:center"> <b>Drag from Here</b> </div>
+            <div style="text-align:center"> <b>Drag from Here</b> </div>
 
 
         </div>
 
-        
+
     </ng-container>
 </div>
 
@@ -123,3 +131,6 @@
     </p>
         
 </p-dialog> -->
+
+
+
